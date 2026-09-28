@@ -32,7 +32,7 @@ function App() {
         <SessionProvider>
         <BrowserRouter>
           <Routes>
-            {/* Participant & Public Flow (With Navbar & Footer) */}
+            {/* Participant & Public Flow */}
             <Route
               path="/"
               element={
@@ -41,7 +41,6 @@ function App() {
                   <main className="flex-1">
                     <LandingPage />
                   </main>
-                  <Footer />
                 </div>
               }
             />
