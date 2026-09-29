@@ -557,7 +557,7 @@ export default function LiveLeaderboardSidebar({ session, participant, answerSta
                   </div>
 
                   <div className="text-right shrink-0">
-                    <div className="font-display text-sm font-extrabold text-[#6C5CE7]">
+                    <div className="font-display text-sm font-extrabold text-[#024948]">
                       {currentUserItem.score.toLocaleString()}
                     </div>
                     <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
@@ -572,7 +572,10 @@ export default function LiveLeaderboardSidebar({ session, participant, answerSta
           {/* Footer Sync Note */}
           <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-400">
             <span>Points update live</span>
-            <span className="text-[#6C5CE7] font-extrabold">QuizPulse Live</span>
+            <span className="text-[#024948] font-extrabold flex items-center gap-1.5">
+              <img src="/softlearn-logo.png" alt="SoftLearn" className="h-4 w-auto object-contain inline-block" />
+              <span>Live</span>
+            </span>
           </div>
         </div>
       </aside>

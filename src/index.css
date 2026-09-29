@@ -4,26 +4,26 @@
   --font-sans: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Fredoka', 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --color-brand-primary: #6C5CE7;
-  --color-brand-primary-hover: #5644DE;
-  --color-brand-primary-light: #ECE9FE;
+  --color-brand-primary: #024948;
+  --color-brand-primary-hover: #013736;
+  --color-brand-primary-light: #E6F5F4;
   
-  --color-brand-secondary: #00B894;
-  --color-brand-secondary-hover: #00A383;
-  --color-brand-secondary-light: #E0F8F2;
+  --color-brand-secondary: #00A596;
+  --color-brand-secondary-hover: #008B7E;
+  --color-brand-secondary-light: #E0F8F5;
   
-  --color-brand-accent: #FDCB6E;
-  --color-brand-accent-hover: #F8B84E;
-  --color-brand-accent-light: #FFF8E6;
+  --color-brand-accent: #E9A708;
+  --color-brand-accent-hover: #D49504;
+  --color-brand-accent-light: #FFF7E6;
   
   --color-brand-danger: #FF7675;
   --color-brand-danger-hover: #E85B5A;
   --color-brand-danger-light: #FFEBEB;
 
   --color-brand-blue: #0984E3;
-  --color-brand-purple: #A29BFE;
-  --color-brand-pink: #E84393;
-  --color-brand-dark: #252A34;
+  --color-brand-teal: #00A596;
+  --color-brand-gold: #E9A708;
+  --color-brand-dark: #024948;
   --color-brand-gray: #636E72;
   --color-brand-bg: #F8F9FC;
 }
@@ -48,13 +48,13 @@
 
 /* Playful 3D Bouncy Buttons & Elements */
 .btn-3d-primary {
-  background-color: #6C5CE7;
+  background-color: #024948;
   color: white;
-  border-bottom: 4px solid #4D3DC7;
+  border-bottom: 4px solid #013433;
   transition: all 0.15s ease-in-out;
 }
 .btn-3d-primary:hover {
-  background-color: #5D4CE0;
+  background-color: #035D5C;
   transform: translateY(-1px);
 }
 .btn-3d-primary:active {
@@ -63,13 +63,13 @@
 }
 
 .btn-3d-secondary {
-  background-color: #00B894;
+  background-color: #00A596;
   color: white;
-  border-bottom: 4px solid #008D72;
+  border-bottom: 4px solid #007D72;
   transition: all 0.15s ease-in-out;
 }
 .btn-3d-secondary:hover {
-  background-color: #02A888;
+  background-color: #00BAAA;
   transform: translateY(-1px);
 }
 .btn-3d-secondary:active {
@@ -78,13 +78,13 @@
 }
 
 .btn-3d-accent {
-  background-color: #FDCB6E;
-  color: #2D3436;
-  border-bottom: 4px solid #E5AA3A;
+  background-color: #E9A708;
+  color: #1F1905;
+  border-bottom: 4px solid #BD8503;
   transition: all 0.15s ease-in-out;
 }
 .btn-3d-accent:hover {
-  background-color: #F3BF58;
+  background-color: #F3B11A;
   transform: translateY(-1px);
 }
 .btn-3d-accent:active {
@@ -125,47 +125,65 @@
 
 /* Chunky Action Button (Image 2 style) */
 .btn-3d-green {
-  background-color: #00B894;
+  background-color: #00A596;
   color: white;
-  border-bottom: 5px solid #008E73;
+  border-bottom: 5px solid #007D72;
   transition: all 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 8px 20px -4px rgba(0, 184, 148, 0.35);
+  box-shadow: 0 8px 20px -4px rgba(0, 165, 150, 0.35);
 }
 .btn-3d-green:hover:not(:disabled) {
-  background-color: #00A887;
+  background-color: #00BAAA;
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px -4px rgba(0, 184, 148, 0.45);
+  box-shadow: 0 12px 24px -4px rgba(0, 165, 150, 0.45);
 }
 .btn-3d-green:active:not(:disabled) {
   transform: translateY(3px);
   border-bottom-width: 2px;
-  box-shadow: 0 4px 10px -2px rgba(0, 184, 148, 0.3);
+  box-shadow: 0 4px 10px -2px rgba(0, 165, 150, 0.3);
 }
 
 .btn-3d-purple {
-  background-color: #6C5CE7;
+  background-color: #024948;
   color: white;
-  border-bottom: 5px solid #4D3DC7;
+  border-bottom: 5px solid #013433;
   transition: all 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 8px 20px -4px rgba(108, 92, 231, 0.35);
+  box-shadow: 0 8px 20px -4px rgba(2, 73, 72, 0.35);
 }
 .btn-3d-purple:hover:not(:disabled) {
-  background-color: #5D4CE0;
+  background-color: #035D5C;
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px -4px rgba(108, 92, 231, 0.45);
+  box-shadow: 0 12px 24px -4px rgba(2, 73, 72, 0.45);
 }
 .btn-3d-purple:active:not(:disabled) {
   transform: translateY(3px);
   border-bottom-width: 2px;
-  box-shadow: 0 4px 10px -2px rgba(108, 92, 231, 0.3);
+  box-shadow: 0 4px 10px -2px rgba(2, 73, 72, 0.3);
+}
+
+.btn-3d-gold {
+  background-color: #E9A708;
+  color: #1F1905;
+  border-bottom: 5px solid #BD8503;
+  transition: all 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 20px -4px rgba(233, 167, 8, 0.35);
+}
+.btn-3d-gold:hover:not(:disabled) {
+  background-color: #F3B11A;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -4px rgba(233, 167, 8, 0.45);
+}
+.btn-3d-gold:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 2px;
+  box-shadow: 0 4px 10px -2px rgba(233, 167, 8, 0.3);
 }
 
 /* Glass & Card styles */
 .card-playful {
   background: white;
   border-radius: 1.5rem;
-  border: 2px solid #F1EEFC;
-  box-shadow: 0 12px 30px -5px rgba(108, 92, 231, 0.07), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  border: 2px solid #E6F3F2;
+  box-shadow: 0 12px 30px -5px rgba(2, 73, 72, 0.07), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
 }
 
 .card-playful-hover {
@@ -173,8 +191,8 @@
 }
 .card-playful-hover:hover {
   transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 20px 32px -8px rgba(108, 92, 231, 0.15);
-  border-color: #DCD6FA;
+  box-shadow: 0 20px 32px -8px rgba(2, 73, 72, 0.15);
+  border-color: #8FD8D1;
 }
 
 /* Question Option Cards (Image 2 style) */
@@ -187,17 +205,17 @@
   transition: all 0.15s ease-in-out;
 }
 .option-card-idle:hover:not(:disabled) {
-  border-color: #C7BFFF;
-  background-color: #FAF8FF;
+  border-color: #8FD8D1;
+  background-color: #F2FAF9;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(108, 92, 231, 0.1);
+  box-shadow: 0 6px 16px rgba(0, 165, 150, 0.12);
 }
 
 .option-card-correct {
-  background: #E8F8F2 !important;
-  border: 2px solid #00B894 !important;
-  color: #1A3E34 !important;
-  box-shadow: 0 4px 14px rgba(0, 184, 148, 0.2) !important;
+  background: #E5F9F7 !important;
+  border: 2px solid #00A596 !important;
+  color: #024948 !important;
+  box-shadow: 0 4px 14px rgba(0, 165, 150, 0.2) !important;
 }
 
 .option-card-wrong {
@@ -208,17 +226,17 @@
 }
 
 .option-card-selected {
-  background: #F1EEFF !important;
-  border: 2px solid #6C5CE7 !important;
-  color: #4D3DC7 !important;
-  box-shadow: 0 4px 16px rgba(108, 92, 231, 0.25) !important;
+  background: #EBF8F7 !important;
+  border: 2px solid #024948 !important;
+  color: #024948 !important;
+  box-shadow: 0 4px 16px rgba(2, 73, 72, 0.25) !important;
 }
 
 /* 3D Podium Pedestals (Image 1 style) */
 .podium-step-1 {
-  background: linear-gradient(180deg, #8E7BFF 0%, #6C5CE7 100%);
-  border-top: 4px solid #A293FF;
-  box-shadow: 0 8px 24px rgba(108, 92, 231, 0.35);
+  background: linear-gradient(180deg, #00A596 0%, #024948 100%);
+  border-top: 4px solid #32DECE;
+  box-shadow: 0 8px 24px rgba(2, 73, 72, 0.35);
 }
 .podium-step-2 {
   background: linear-gradient(180deg, #A8B2C1 0%, #8896A6 100%);
@@ -226,9 +244,9 @@
   box-shadow: 0 6px 18px rgba(136, 150, 166, 0.3);
 }
 .podium-step-3 {
-  background: linear-gradient(180deg, #E5A56D 0%, #C97E40 100%);
-  border-top: 4px solid #F0B885;
-  box-shadow: 0 6px 18px rgba(201, 126, 64, 0.3);
+  background: linear-gradient(180deg, #F3B11A 0%, #C48B03 100%);
+  border-top: 4px solid #F8CE65;
+  box-shadow: 0 6px 18px rgba(233, 167, 8, 0.3);
 }
 
 /* Pulse Glow */

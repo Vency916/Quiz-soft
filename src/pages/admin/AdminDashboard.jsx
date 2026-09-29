@@ -46,8 +46,8 @@ export default function AdminDashboard() {
   };
 
   const cards = [
-    { label: 'Total Quizzes', value: stats?.total_quizzes ?? '--', icon: BookOpen, color: 'text-[#6C5CE7]', bg: 'bg-[#ECE9FE]' },
-    { label: 'Published Quizzes', value: stats?.published_quizzes ?? '--', icon: CheckSquare, color: 'text-[#00B894]', bg: 'bg-[#E0F8F2]' },
+    { label: 'Total Quizzes', value: stats?.total_quizzes ?? '--', icon: BookOpen, color: 'text-[#024948]', bg: 'bg-[#E6F5F4]' },
+    { label: 'Published Quizzes', value: stats?.published_quizzes ?? '--', icon: CheckSquare, color: 'text-[#00A596]', bg: 'bg-[#E0F8F5]' },
     { label: 'Active Live Sessions', value: stats?.live_sessions ?? '--', icon: Radio, color: 'text-[#FF7675]', bg: 'bg-[#FFEBEB]' },
     { label: 'Total Players Joined', value: stats?.total_participants ?? '--', icon: Users, color: 'text-[#0984E3]', bg: 'bg-[#E1F0FF]' },
   ];
@@ -109,7 +109,7 @@ export default function AdminDashboard() {
           <Link
             to="/admin/quizzes"
             onClick={() => sounds.playClick()}
-            className="text-xs font-bold text-[#6C5CE7] hover:underline"
+            className="text-xs font-bold text-[#024948] hover:underline"
           >
             Manage Quizzes →
           </Link>
@@ -130,7 +130,7 @@ export default function AdminDashboard() {
               <tbody className="divide-y divide-slate-100">
                 {stats.recent_sessions.map((s) => (
                   <tr key={s.id} className="hover:bg-slate-50/50">
-                    <td className="py-3 font-display font-bold text-[#6C5CE7]">
+                    <td className="py-3 font-display font-bold text-[#024948]">
                       {s.session_code}
                     </td>
                     <td className="py-3 font-bold text-slate-800 truncate max-w-[180px] sm:max-w-xs">
@@ -139,9 +139,9 @@ export default function AdminDashboard() {
                     <td className="py-3">
                       <span className={`px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase ${
                         s.status === 'live_question'
-                          ? 'bg-[#E0F8F2] text-[#00B894] animate-pulse'
+                          ? 'bg-[#E0F8F5] text-[#00A596] animate-pulse'
                           : s.status === 'waiting'
-                          ? 'bg-[#FFF8E6] text-[#E5AA3A]'
+                          ? 'bg-[#FFF8E6] text-[#E9A708]'
                           : 'bg-slate-100 text-slate-600'
                       }`}>
                         {s.status}
@@ -171,7 +171,7 @@ export default function AdminDashboard() {
                             }}
                             className="btn-3d-white px-3 py-1.5 rounded-xl text-xs font-bold inline-flex items-center gap-1 cursor-pointer whitespace-nowrap"
                           >
-                            <BarChart2 className="w-3.5 h-3.5 text-[#6C5CE7]" />
+                            <BarChart2 className="w-3.5 h-3.5 text-[#024948]" />
                             <span>Analytics</span>
                           </button>
                         )}

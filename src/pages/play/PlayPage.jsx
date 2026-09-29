@@ -185,7 +185,7 @@ export default function PlayPage() {
     return (
       <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-4">
         <div className="card-playful p-8 max-w-md w-full text-center">
-          <div className="w-14 h-14 rounded-2xl bg-[#ECE9FE] text-[#6C5CE7] flex items-center justify-center mx-auto mb-4">
+          <div className="w-14 h-14 rounded-2xl bg-[#E6F5F4] text-[#024948] flex items-center justify-center mx-auto mb-4">
             <AlertCircle className="w-7 h-7" />
           </div>
           <h2 className="font-display text-2xl font-bold text-slate-800 mb-2">
@@ -209,7 +209,7 @@ export default function PlayPage() {
     return (
       <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-4">
         <div className="flex flex-col items-center gap-3">
-          <RefreshCw className="w-8 h-8 text-[#6C5CE7] animate-spin" />
+          <RefreshCw className="w-8 h-8 text-[#00A596] animate-spin" />
           <span className="font-display font-bold text-slate-600">Connecting to live game...</span>
         </div>
       </div>

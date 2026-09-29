@@ -77,10 +77,10 @@ export default function JoinQuizPage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-4 bg-gradient-to-b from-[#F6F4FF] via-[#FAF9FF] to-[#FFFFFF] relative overflow-hidden">
+    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-4 bg-gradient-to-b from-[#EBF7F6] via-[#F5FCFB] to-[#FFFFFF] relative overflow-hidden">
       {/* Background Soft Glow Accents */}
-      <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-[#6C5CE7]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#00B894]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-[#024948]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#00A596]/12 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-md w-full relative z-10">
         {/* Back Link */}
@@ -89,20 +89,20 @@ export default function JoinQuizPage() {
             sounds.playClick();
             navigate('/');
           }}
-          className="mb-4 inline-flex items-center gap-2 text-xs font-black text-slate-500 hover:text-[#6C5CE7] transition-all cursor-pointer bg-white/80 backdrop-blur px-3 py-1.5 rounded-xl border border-slate-200/80 shadow-sm"
+          className="mb-4 inline-flex items-center gap-2 text-xs font-black text-slate-500 hover:text-[#024948] transition-all cursor-pointer bg-white/80 backdrop-blur px-3 py-1.5 rounded-xl border border-slate-200/80 shadow-sm"
         >
           <ArrowLeft className="w-4 h-4 stroke-[2.5]" />
           <span>Back to Home</span>
         </button>
 
         {/* Main Join Card */}
-        <div className="card-playful p-6 sm:p-8 bg-white border-2 border-[#ECE8FD] shadow-2xl shadow-[#6C5CE7]/10 relative">
+        <div className="card-playful p-6 sm:p-8 bg-white border-2 border-[#D0EBE8] shadow-2xl shadow-[#024948]/10 relative">
           {/* Mascot Header */}
           <div className="text-center mb-6 relative">
             <div className="mb-2 animate-bounce">
               <Mascot mood={sessionDetails ? 'celebrating' : 'happy'} size={76} className="mx-auto" />
             </div>
-            <h1 className="font-display text-2xl sm:text-3xl font-extrabold text-slate-800 tracking-tight">
+            <h1 className="font-display text-2xl sm:text-3xl font-extrabold text-[#024948] tracking-tight">
               Join Live Quiz
             </h1>
             <p className="text-xs font-semibold text-slate-500 mt-1">
@@ -132,11 +132,11 @@ export default function JoinQuizPage() {
                   placeholder="e.g. EASY10"
                   maxLength={8}
                   required
-                  className="w-full bg-[#FAF9FF] border-2 border-slate-200 focus:border-[#6C5CE7] focus:bg-white rounded-2xl px-5 py-3.5 font-display text-xl font-black tracking-widest text-center uppercase text-slate-800 placeholder:font-sans placeholder:text-sm placeholder:font-bold placeholder:tracking-normal placeholder:text-slate-400 focus:outline-none transition-all shadow-inner"
+                  className="w-full bg-[#F6FBFA] border-2 border-slate-200 focus:border-[#00A596] focus:bg-white rounded-2xl px-5 py-3.5 font-display text-xl font-black tracking-widest text-center uppercase text-slate-800 placeholder:font-sans placeholder:text-sm placeholder:font-bold placeholder:tracking-normal placeholder:text-slate-400 focus:outline-none transition-all shadow-inner"
                 />
                 {loadingQuiz && (
                   <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                    <div className="w-5 h-5 border-2 border-[#6C5CE7] border-t-transparent rounded-full animate-spin" />
+                    <div className="w-5 h-5 border-2 border-[#00A596] border-t-transparent rounded-full animate-spin" />
                   </div>
                 )}
               </div>
@@ -148,19 +148,19 @@ export default function JoinQuizPage() {
                 className={`p-4 rounded-2xl border-2 flex items-center justify-between animate-fade-in ${
                   sessionDetails.status === 'finished'
                     ? 'bg-[#FFF8E6] border-[#FDE5A9]'
-                    : 'bg-[#F6F4FF] border-[#DCD6FA]'
+                    : 'bg-[#E6F5F4] border-[#B2E3DE]'
                 }`}
               >
                 <div>
                   <div className="flex items-center gap-1.5 mb-0.5">
                     <span
                       className={`w-2 h-2 rounded-full ${
-                        sessionDetails.status === 'finished' ? 'bg-[#E5AA3A]' : 'bg-[#00B894] animate-pulse'
+                        sessionDetails.status === 'finished' ? 'bg-[#E9A708]' : 'bg-[#00A596] animate-pulse'
                       }`}
                     />
                     <span
                       className={`text-[10px] font-black uppercase tracking-wider ${
-                        sessionDetails.status === 'finished' ? 'text-[#B7791F]' : 'text-[#6C5CE7]'
+                        sessionDetails.status === 'finished' ? 'text-[#B7791F]' : 'text-[#024948]'
                       }`}
                     >
                       {sessionDetails.status === 'finished' ? '🏁 Quiz Ended' : 'Quiz Ready'}
@@ -173,10 +173,10 @@ export default function JoinQuizPage() {
 
                 <div className="text-right text-[11px] font-extrabold text-slate-600">
                   <div className="flex items-center justify-end gap-1">
-                    <BookOpen className="w-3.5 h-3.5 text-[#6C5CE7]" />
+                    <BookOpen className="w-3.5 h-3.5 text-[#00A596]" />
                     <span>{sessionDetails.quiz?.total_questions || 10} Qs</span>
                   </div>
-                  <div className={sessionDetails.status === 'finished' ? 'text-slate-400' : 'text-[#00B894]'}>
+                  <div className={sessionDetails.status === 'finished' ? 'text-slate-400' : 'text-[#00A596]'}>
                     {sessionDetails.status === 'finished'
                       ? 'Concluded'
                       : `${sessionDetails.participants_count || 0} Playing`}
@@ -196,7 +196,7 @@ export default function JoinQuizPage() {
                     sounds.playClick();
                     navigate('/');
                   }}
-                  className="btn-3d-purple w-full py-3 rounded-2xl font-display text-sm font-bold cursor-pointer"
+                  className="btn-3d-secondary w-full py-3 rounded-2xl font-display text-sm font-bold cursor-pointer"
                 >
                   Back to Open Quizzes
                 </button>
@@ -215,7 +215,7 @@ export default function JoinQuizPage() {
                     placeholder="e.g. SpeedyDave, Sarah, Alex"
                     maxLength={25}
                     required
-                    className="w-full bg-[#FAF9FF] border-2 border-slate-200 focus:border-[#6C5CE7] focus:bg-white rounded-2xl px-5 py-3.5 font-display text-base font-bold text-slate-800 placeholder:font-sans placeholder:text-sm placeholder:font-medium placeholder:text-slate-400 focus:outline-none transition-all shadow-inner"
+                    className="w-full bg-[#F6FBFA] border-2 border-slate-200 focus:border-[#00A596] focus:bg-white rounded-2xl px-5 py-3.5 font-display text-base font-bold text-slate-800 placeholder:font-sans placeholder:text-sm placeholder:font-medium placeholder:text-slate-400 focus:outline-none transition-all shadow-inner"
                   />
                   <span className="text-[11px] font-medium text-slate-400 mt-1 block">
                     No account required. Used for the real-time podium.
@@ -241,13 +241,13 @@ export default function JoinQuizPage() {
                             }}
                             className={`p-3 rounded-2xl border-2 text-xs font-bold text-left flex items-center gap-2 transition-all cursor-pointer ${
                               isSelected
-                                ? 'border-[#6C5CE7] bg-[#ECE9FE] text-[#6C5CE7] shadow-sm'
+                                ? 'border-[#024948] bg-[#E6F5F4] text-[#024948] shadow-sm'
                                 : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
                             }`}
                           >
                             <span
                               className="w-3.5 h-3.5 rounded-full shrink-0 shadow-sm"
-                              style={{ backgroundColor: group.color || '#6C5CE7' }}
+                              style={{ backgroundColor: group.color || '#024948' }}
                             />
                             <span className="truncate">{group.name}</span>
                           </button>

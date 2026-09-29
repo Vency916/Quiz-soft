@@ -186,17 +186,17 @@ export default function LiveControlPanel() {
               <span className="font-display font-extrabold text-xl sm:text-2xl text-slate-800">
                 {session.quiz.title}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-bold uppercase bg-[#ECE9FE] text-[#6C5CE7]">
+              <span className="px-3 py-1 rounded-full text-xs font-bold uppercase bg-[#E6F5F4] text-[#024948]">
                 PIN: {session.session_code}
               </span>
             </div>
             <div className="flex items-center gap-3 text-xs font-bold text-slate-500 mt-1">
               <span className="flex items-center gap-1">
-                <Users className="w-3.5 h-3.5 text-[#00B894]" />
+                <Users className="w-3.5 h-3.5 text-[#00A596]" />
                 {session.participants_count} Players Connected
               </span>
               <span>•</span>
-              <span className="uppercase text-[#6C5CE7]">{session.status.replace('_', ' ')}</span>
+              <span className="uppercase text-[#024948]">{session.status.replace('_', ' ')}</span>
             </div>
           </div>
         </div>
@@ -208,8 +208,8 @@ export default function LiveControlPanel() {
             title={session.lobby_enabled ? 'Switch to Self-Paced (Fast Mode)' : 'Switch to Host-Controlled (Lobby)'}
             className={`px-3.5 py-2 rounded-2xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer border-2 ${
               session.lobby_enabled || session.pace_mode === 'host_controlled'
-                ? 'border-[#6C5CE7] bg-[#ECE9FE] text-[#6C5CE7]'
-                : 'border-[#00B894] bg-[#E0F8F2] text-[#00B894]'
+                ? 'border-[#024948] bg-[#E6F5F4] text-[#024948]'
+                : 'border-[#00A596] bg-[#E0F8F5] text-[#00A596]'
             }`}
           >
             {session.lobby_enabled || session.pace_mode === 'host_controlled' ? (
@@ -327,7 +327,7 @@ export default function LiveControlPanel() {
             title="Scan to Join QR"
             className="btn-3d-white p-2.5 rounded-2xl text-slate-600 cursor-pointer"
           >
-            <QrCode className="w-4 h-4 text-[#6C5CE7]" />
+            <QrCode className="w-4 h-4 text-[#024948]" />
           </button>
         </div>
       </div>
@@ -335,14 +335,14 @@ export default function LiveControlPanel() {
       {/* Main Host Area */}
       {session.status === 'waiting' && (
         <div className="card-playful p-10 bg-white border-2 border-slate-100 text-center shadow-lg">
-          <div className="w-20 h-20 rounded-3xl bg-[#ECE9FE] text-[#6C5CE7] flex items-center justify-center mx-auto mb-4 animate-bounce">
+          <div className="w-20 h-20 rounded-3xl bg-[#E6F5F4] text-[#024948] flex items-center justify-center mx-auto mb-4 animate-bounce">
             <Users className="w-10 h-10" />
           </div>
           <h2 className="font-display text-3xl font-extrabold text-slate-800 mb-2">
             Lobby Open — Waiting for Players
           </h2>
           <p className="text-slate-500 font-medium mb-6">
-            Share PIN: <span className="font-display font-extrabold text-[#6C5CE7] text-xl tracking-widest">{session.session_code}</span> or display the QR code on the projector screen!
+            Share PIN: <span className="font-display font-extrabold text-[#024948] text-xl tracking-widest">{session.session_code}</span> or display the QR code on the projector screen!
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -369,7 +369,7 @@ export default function LiveControlPanel() {
           {/* Active Question Display */}
           <div className="card-playful p-8 bg-white border-2 border-slate-100 shadow-xl">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#6C5CE7] bg-[#ECE9FE] px-3 py-1 rounded-full">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#024948] bg-[#E6F5F4] px-3 py-1 rounded-full">
                 Question {currentQ.order} of {currentQ.total_questions}
               </span>
 

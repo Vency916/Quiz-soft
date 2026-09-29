@@ -38,16 +38,14 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-4 bg-gradient-to-b from-[#ECE9FE]/40 to-[#F8F9FC]">
+    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-4 bg-gradient-to-b from-[#E6F5F4]/60 to-[#F8F9FC]">
       <div className="max-w-md w-full">
         <div className="card-playful p-6 sm:p-8 bg-white border-2 border-slate-100 shadow-2xl">
           {/* Header */}
           <div className="text-center mb-6">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#6C5CE7] to-[#A29BFE] flex items-center justify-center text-white mx-auto mb-3 shadow-md">
-              <Shield className="w-7 h-7" />
-            </div>
-            <h1 className="font-display text-2xl sm:text-3xl font-bold text-slate-800">
-              Super Admin Access
+            <img src="/softlearn-logo.png" alt="SoftLearn" className="h-12 w-auto object-contain mx-auto mb-4" />
+            <h1 className="font-display text-2xl sm:text-3xl font-extrabold text-[#024948]">
+              Admin Portal
             </h1>
             <p className="text-sm text-slate-500 mt-1">
               Sign in to manage quizzes, host live sessions & view analytics
@@ -74,9 +72,9 @@ export default function AdminLogin() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@quizpulse.com"
+                  placeholder="admin@softlearn.com"
                   required
-                  className="w-full bg-slate-50 border-2 border-slate-200 focus:border-[#6C5CE7] focus:bg-white rounded-2xl pl-12 pr-4 py-3 font-semibold text-slate-800 placeholder:text-slate-400 focus:outline-none transition-all text-sm"
+                  className="w-full bg-slate-50 border-2 border-slate-200 focus:border-[#00A596] focus:bg-white rounded-2xl pl-12 pr-4 py-3 font-semibold text-slate-800 placeholder:text-slate-400 focus:outline-none transition-all text-sm"
                 />
               </div>
             </div>
@@ -93,7 +91,7 @@ export default function AdminLogin() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   required
-                  className="w-full bg-slate-50 border-2 border-slate-200 focus:border-[#6C5CE7] focus:bg-white rounded-2xl pl-12 pr-4 py-3 font-semibold text-slate-800 placeholder:text-slate-400 focus:outline-none transition-all text-sm"
+                  className="w-full bg-slate-50 border-2 border-slate-200 focus:border-[#00A596] focus:bg-white rounded-2xl pl-12 pr-4 py-3 font-semibold text-slate-800 placeholder:text-slate-400 focus:outline-none transition-all text-sm"
                 />
               </div>
             </div>
@@ -119,9 +117,9 @@ export default function AdminLogin() {
             <button
               type="button"
               onClick={handleFillDemo}
-              className="text-xs font-bold text-[#6C5CE7] bg-[#ECE9FE] hover:bg-[#DCD6FA] px-3.5 py-2 rounded-xl inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="text-xs font-bold text-[#024948] bg-[#E0F8F5] hover:bg-[#C9F2EC] px-3.5 py-2 rounded-xl inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
-              <Sparkles className="w-3.5 h-3.5" />
+              <Sparkles className="w-3.5 h-3.5 text-[#E9A708]" />
               <span>Autofill Demo Credentials</span>
             </button>
           </div>

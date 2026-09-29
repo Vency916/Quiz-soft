@@ -226,12 +226,12 @@ export default function AdminQuizzes() {
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#ECE9FE] text-[#6C5CE7]">
+                  <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#E6F5F4] text-[#024948]">
                     {quiz.category}
                   </span>
                   <span className={`text-[11px] font-bold uppercase px-2.5 py-1 rounded-full ${
                     quiz.status === 'published'
-                      ? 'bg-[#E0F8F2] text-[#00B894]'
+                      ? 'bg-[#E0F8F5] text-[#00A596]'
                       : 'bg-slate-100 text-slate-500'
                   }`}>
                     {quiz.status}
@@ -243,7 +243,7 @@ export default function AdminQuizzes() {
                     sounds.playClick();
                     navigate(`/admin/quizzes/${quiz.id}`);
                   }}
-                  className="font-display text-xl font-bold text-slate-800 mb-2 line-clamp-1 hover:text-[#6C5CE7] cursor-pointer transition-colors"
+                  className="font-display text-xl font-bold text-slate-800 mb-2 line-clamp-1 hover:text-[#00A596] cursor-pointer transition-colors"
                 >
                   {quiz.title}
                 </h2>
@@ -257,13 +257,13 @@ export default function AdminQuizzes() {
                       sounds.playClick();
                       navigate(`/admin/quizzes/${quiz.id}`);
                     }}
-                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#ECE9FE]/60 text-[#6C5CE7] hover:bg-[#ECE9FE] transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#E6F5F4]/60 text-[#024948] hover:bg-[#E6F5F4] transition-colors cursor-pointer"
                   >
                     <HelpCircle className="w-3.5 h-3.5" />
                     <span>{quiz.questions_count} Questions (Edit & View)</span>
                   </button>
                   <div className="flex items-center gap-1.5">
-                    <Layers className="w-4 h-4 text-[#00B894]" />
+                    <Layers className="w-4 h-4 text-[#00A596]" />
                     <span className="capitalize">{quiz.difficulty}</span>
                   </div>
                 </div>
@@ -299,14 +299,14 @@ export default function AdminQuizzes() {
                       navigate(`/admin/quizzes/${quiz.id}`);
                     }}
                     title="Edit Quiz & Questions"
-                    className="p-2 rounded-xl text-slate-500 hover:text-[#6C5CE7] hover:bg-[#ECE9FE] transition-colors"
+                    className="p-2 rounded-xl text-slate-500 hover:text-[#024948] hover:bg-[#E6F5F4] transition-colors"
                   >
                     <Edit3 className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => handleDuplicate(quiz.id)}
                     title="Duplicate Quiz"
-                    className="p-2 rounded-xl text-slate-500 hover:text-[#00B894] hover:bg-[#E0F8F2] transition-colors"
+                    className="p-2 rounded-xl text-slate-500 hover:text-[#00A596] hover:bg-[#E0F8F5] transition-colors"
                   >
                     <Copy className="w-4 h-4" />
                   </button>
@@ -485,7 +485,7 @@ export default function AdminQuizzes() {
                   <label
                     className={`flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${
                       paceMode === 'host_controlled'
-                        ? 'border-[#6C5CE7] bg-[#ECE9FE]'
+                        ? 'border-[#024948] bg-[#E6F5F4]'
                         : 'border-slate-200 bg-white hover:bg-slate-50'
                     }`}
                   >
@@ -498,7 +498,7 @@ export default function AdminQuizzes() {
                       className="hidden"
                     />
                     <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                      paceMode === 'host_controlled' ? 'border-[#6C5CE7] bg-[#6C5CE7]' : 'border-slate-300'
+                      paceMode === 'host_controlled' ? 'border-[#024948] bg-[#024948]' : 'border-slate-300'
                     }`}>
                       {paceMode === 'host_controlled' && <div className="w-2 h-2 rounded-full bg-white" />}
                     </div>

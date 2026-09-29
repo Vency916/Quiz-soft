@@ -48,7 +48,7 @@ export default function Timer({
   if (!enabled || totalSeconds <= 0) {
     if (compact) {
       return (
-        <div className="flex items-center gap-1 font-display font-black text-xs text-[#6C5CE7]">
+        <div className="flex items-center gap-1 font-display font-black text-xs text-[#024948]">
           <span className="text-base leading-none">∞</span>
           <span className="text-[10px] uppercase font-bold tracking-wider">Untimed</span>
         </div>
@@ -56,7 +56,7 @@ export default function Timer({
     }
     return (
       <div className="flex flex-col items-center">
-        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-4 border-[#6C5CE7] bg-[#ECE9FE] text-[#6C5CE7] flex flex-col items-center justify-center font-display font-bold shadow-md">
+        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-4 border-[#024948] bg-[#E6F5F4] text-[#024948] flex flex-col items-center justify-center font-display font-bold shadow-md">
           <span className="text-2xl leading-none">∞</span>
           <span className="text-[9px] font-sans uppercase font-bold tracking-wider opacity-90">Untimed</span>
         </div>
@@ -67,14 +67,14 @@ export default function Timer({
   const percentage = Math.max(0, Math.min(100, (timeLeft / totalSeconds) * 100));
 
   // Determine color theme based on urgency
-  let colorClass = 'text-[#00B894] border-[#00B894] bg-[#E0F8F2]';
-  let barClass = 'bg-[#00B894]';
+  let colorClass = 'text-[#00A596] border-[#00A596] bg-[#E0F8F5]';
+  let barClass = 'bg-[#00A596]';
   if (timeLeft <= 5) {
     colorClass = 'text-[#FF7675] border-[#FF7675] bg-[#FFEBEB] animate-pulse';
     barClass = 'bg-[#FF7675]';
   } else if (timeLeft <= 10) {
-    colorClass = 'text-[#FDCB6E] border-[#FDCB6E] bg-[#FFF8E6]';
-    barClass = 'bg-[#FDCB6E]';
+    colorClass = 'text-[#E9A708] border-[#E9A708] bg-[#FFF8E6]';
+    barClass = 'bg-[#E9A708]';
   }
 
   if (compact) {

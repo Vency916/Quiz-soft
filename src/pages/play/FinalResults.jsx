@@ -57,10 +57,10 @@ export default function FinalResults({ session, participant, onLeave }) {
         </p>
 
         {/* Big Rank & Score Display */}
-        <div className="grid grid-cols-2 gap-4 max-w-md mx-auto p-5 bg-[#ECE9FE]/50 rounded-3xl border-2 border-[#DCD6FA] mb-8">
+        <div className="grid grid-cols-2 gap-4 max-w-md mx-auto p-5 bg-[#E6F5F4]/60 rounded-3xl border-2 border-[#D0EBE8] mb-8">
           <div>
             <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Final Position</div>
-            <div className="font-display text-4xl sm:text-5xl font-extrabold text-[#6C5CE7] flex items-center justify-center gap-1">
+            <div className="font-display text-4xl sm:text-5xl font-extrabold text-[#024948] flex items-center justify-center gap-1">
               <span>#{finalRank}</span>
             </div>
           </div>
@@ -74,9 +74,9 @@ export default function FinalResults({ session, participant, onLeave }) {
 
         {/* Stats Row: Correct, Incorrect, Accuracy */}
         <div className="grid grid-cols-3 gap-2 sm:gap-4 max-w-md mx-auto mb-8 text-center">
-          <div className="p-3 bg-[#E0F8F2] rounded-2xl border border-[#00B894]/20">
-            <CheckCircle className="w-5 h-5 text-[#00B894] mx-auto mb-1" />
-            <div className="font-display text-2xl font-bold text-[#00B894]">{correctCount}</div>
+          <div className="p-3 bg-[#E0F8F5] rounded-2xl border border-[#00A596]/20">
+            <CheckCircle className="w-5 h-5 text-[#00A596] mx-auto mb-1" />
+            <div className="font-display text-2xl font-bold text-[#00A596]">{correctCount}</div>
             <div className="text-[11px] font-bold text-slate-500 uppercase">Correct</div>
           </div>
 
@@ -88,9 +88,9 @@ export default function FinalResults({ session, participant, onLeave }) {
             <div className="text-[11px] font-bold text-slate-500 uppercase">Incorrect</div>
           </div>
 
-          <div className="p-3 bg-[#FFF8E6] rounded-2xl border border-[#FDCB6E]/30">
-            <Sparkles className="w-5 h-5 text-[#E5AA3A] mx-auto mb-1" />
-            <div className="font-display text-2xl font-bold text-[#E5AA3A]">{accuracy}%</div>
+          <div className="p-3 bg-[#FFF8E6] rounded-2xl border border-[#E9A708]/30">
+            <Sparkles className="w-5 h-5 text-[#E9A708] mx-auto mb-1" />
+            <div className="font-display text-2xl font-bold text-[#E9A708]">{accuracy}%</div>
             <div className="text-[11px] font-bold text-slate-500 uppercase">Accuracy</div>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function FinalResults({ session, participant, onLeave }) {
         {/* Final Podium Standings */}
         <div className="mt-8 pt-8 border-t border-slate-100 text-left">
           <h2 className="font-display text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-            <Award className="w-5 h-5 text-[#6C5CE7]" />
+            <Award className="w-5 h-5 text-[#024948]" />
             <span>Final Top Players</span>
           </h2>
 
@@ -109,7 +109,7 @@ export default function FinalResults({ session, participant, onLeave }) {
                 <div
                   key={p.id}
                   className={`flex items-center justify-between p-3 rounded-2xl border text-sm font-bold ${
-                    isCurrent ? 'bg-[#ECE9FE] border-[#6C5CE7]' : 'bg-slate-50 border-slate-100'
+                    isCurrent ? 'bg-[#E6F5F4] border-[#024948]' : 'bg-slate-50 border-slate-100'
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
@@ -117,9 +117,9 @@ export default function FinalResults({ session, participant, onLeave }) {
                       #{p.rank}
                     </span>
                     <span>{p.username}</span>
-                    {isCurrent && <span className="text-[10px] text-[#6C5CE7] bg-white px-1.5 rounded">You</span>}
+                    {isCurrent && <span className="text-[10px] text-[#024948] bg-white px-1.5 rounded">You</span>}
                   </div>
-                  <div className="font-display font-extrabold text-[#6C5CE7]">
+                  <div className="font-display font-extrabold text-[#024948]">
                     {p.score.toLocaleString()} pts
                   </div>
                 </div>

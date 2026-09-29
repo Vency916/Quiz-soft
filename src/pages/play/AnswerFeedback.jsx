@@ -25,9 +25,9 @@ export default function AnswerFeedback({ session, participant, answerState, onNe
   if (!isAnswerRevealed && (answerState || session?.status === 'live_question')) {
     return (
       <div className="max-w-md mx-auto w-full px-4 py-8 text-center animate-fade-in">
-        <div className="card-playful p-8 bg-white border-2 border-[#ECE8FD] shadow-xl shadow-[#6C5CE7]/10">
-          <div className="w-16 h-16 rounded-3xl bg-[#ECE9FE] text-[#6C5CE7] flex items-center justify-center mx-auto mb-4 shadow-sm animate-bounce">
-            <Sparkles className="w-8 h-8" />
+        <div className="card-playful p-8 bg-white border-2 border-[#D0EBE8] shadow-xl shadow-[#024948]/10">
+          <div className="w-16 h-16 rounded-3xl bg-[#E6F5F4] text-[#024948] flex items-center justify-center mx-auto mb-4 shadow-sm animate-bounce">
+            <Sparkles className="w-8 h-8 text-[#E9A708]" />
           </div>
           <h2 className="font-display text-2xl font-black text-slate-800 mb-2">
             {answerState ? 'Answer Locked In! 🔒' : 'Answer Received!'}
@@ -36,10 +36,10 @@ export default function AnswerFeedback({ session, participant, answerState, onNe
             Hold tight! Results will appear as soon as the question timer ends or host reveals answers.
           </p>
 
-          <div className="p-4 bg-[#FAF9FF] rounded-2xl border border-[#ECE8FD] flex items-center justify-around text-slate-700">
+          <div className="p-4 bg-[#F8FCFB] rounded-2xl border border-[#D0EBE8] flex items-center justify-around text-slate-700">
             <div>
               <div className="text-[10px] font-black uppercase tracking-wider text-slate-400">Total Score</div>
-              <div className="font-display text-2xl font-black text-[#6C5CE7]">
+              <div className="font-display text-2xl font-black text-[#024948]">
                 {(participant?.score || 0).toLocaleString()}
               </div>
             </div>
@@ -53,7 +53,7 @@ export default function AnswerFeedback({ session, participant, answerState, onNe
           </div>
 
           <div className="mt-6 flex items-center justify-center gap-2 text-xs font-bold text-slate-400">
-            <span className="w-2 h-2 rounded-full bg-[#6C5CE7] animate-ping" />
+            <span className="w-2 h-2 rounded-full bg-[#00A596] animate-ping" />
             <span>Waiting for host to reveal...</span>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function AnswerFeedback({ session, participant, answerState, onNe
         <div
           className={`px-3.5 py-1.5 rounded-full font-display font-black text-xs flex items-center gap-1.5 shadow-sm border ${
             isCorrect
-              ? 'bg-[#E0F8F2] text-[#00B894] border-[#00B894]/30'
+              ? 'bg-[#E0F8F5] text-[#00A596] border-[#00A596]/30'
               : 'bg-[#FFEAEA] text-[#FF7675] border-[#FF7675]/30'
           }`}
         >
@@ -115,20 +115,20 @@ export default function AnswerFeedback({ session, participant, answerState, onNe
       {/* Thin Neon Progress Bar */}
       <div className="w-full h-2 bg-slate-100 rounded-full mb-6 overflow-hidden p-0.5 border border-slate-200/60">
         <div
-          className="h-full bg-[#00B894] rounded-full transition-all duration-300 shadow-[0_0_8px_#00B894]"
+          className="h-full bg-[#00A596] rounded-full transition-all duration-300 shadow-[0_0_8px_#00A596]"
           style={{ width: `${progressPercent}%` }}
         />
       </div>
 
       {/* Floating Question Card (Image 2 style) */}
-      <div className="card-playful p-6 sm:p-8 bg-white border-2 border-[#ECE8FD] shadow-xl shadow-[#6C5CE7]/6 mb-6">
+      <div className="card-playful p-6 sm:p-8 bg-white border-2 border-[#D0EBE8] shadow-xl shadow-[#024948]/6 mb-6">
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs font-black uppercase tracking-wider text-slate-400">
             {session?.quiz?.category || 'General Knowledge'}
           </span>
           <span
             className={`text-xs font-black px-2.5 py-0.5 rounded-lg ${
-              isCorrect ? 'bg-[#E0F8F2] text-[#00B894]' : 'bg-[#FFEAEA] text-[#FF7675]'
+              isCorrect ? 'bg-[#E0F8F5] text-[#00A596]' : 'bg-[#FFEAEA] text-[#FF7675]'
             }`}
           >
             {isCorrect ? 'Correct Answer 🎉' : isTimedOut ? "Time's Up ⏱️" : 'Incorrect ❌'}
@@ -153,7 +153,7 @@ export default function AnswerFeedback({ session, participant, answerState, onNe
                 // Correct answer always highlighted in soft mint green with right circular green check
                 cardStyle = 'option-card-correct opacity-100';
                 badge = (
-                  <span className="w-7 h-7 rounded-full bg-[#00B894] text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="w-7 h-7 rounded-full bg-[#00A596] text-white flex items-center justify-center shrink-0 shadow-sm">
                     <Check className="w-4 h-4 stroke-[3]" />
                   </span>
                 );
@@ -190,7 +190,7 @@ export default function AnswerFeedback({ session, participant, answerState, onNe
         {/* Explanation Box */}
         {(currentQ?.explanation || answerState?.explanation) && (
           <div className="mt-6 p-4 rounded-2xl bg-[#FFF8E6] border border-[#FDE5A9] text-left text-sm font-medium text-slate-800 flex items-start gap-3">
-            <Lightbulb className="w-5 h-5 text-[#E5AA3A] shrink-0 mt-0.5" />
+            <Lightbulb className="w-5 h-5 text-[#E9A708] shrink-0 mt-0.5" />
             <div>
               <span className="font-black text-[#B7791F]">Explanation: </span>
               <span>{currentQ?.explanation || answerState?.explanation}</span>
@@ -206,20 +206,20 @@ export default function AnswerFeedback({ session, participant, answerState, onNe
             sounds.playClick();
             onNextQuestion();
           }}
-          className="btn-3d-green w-full py-4 rounded-2xl font-display text-lg font-black flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+          className="btn-3d-secondary w-full py-4 rounded-2xl font-display text-lg font-black flex items-center justify-center gap-2 cursor-pointer shadow-lg"
         >
           <span>Next Question</span>
           <ArrowRight className="w-5 h-5 stroke-[3]" />
         </button>
       ) : (
-        <div className="p-4 rounded-2xl bg-white border border-[#ECE8FD] shadow-sm flex items-center justify-between">
+        <div className="p-4 rounded-2xl bg-white border border-[#D0EBE8] shadow-sm flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#00B894] animate-ping" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#00A596] animate-ping" />
             <span className="text-xs font-black text-slate-600">
               Host will advance to next question shortly...
             </span>
           </div>
-          <span className="font-display font-black text-xs text-[#6C5CE7]">
+          <span className="font-display font-black text-xs text-[#024948]">
             Rank #{answerState?.current_rank || '—'}
           </span>
         </div>

@@ -37,7 +37,7 @@ export default function SelfPacedComplete({ session, participant, finishData, on
     return (
       <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-4">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-12 h-12 rounded-full border-4 border-[#6C5CE7] border-t-transparent animate-spin" />
+          <div className="w-12 h-12 rounded-full border-4 border-[#00A596] border-t-transparent animate-spin" />
           <span className="font-display font-bold text-slate-600">Calculating your results...</span>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function SelfPacedComplete({ session, participant, finishData, on
         <div className="card-playful p-6 sm:p-10 bg-white border-2 border-slate-100 shadow-2xl">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-3xl bg-gradient-to-tr from-[#6C5CE7] to-[#A29BFE] text-white flex items-center justify-center mx-auto mb-3 shadow-lg">
+            <div className="w-16 h-16 rounded-3xl bg-gradient-to-tr from-[#024948] to-[#00A596] text-white flex items-center justify-center mx-auto mb-3 shadow-lg">
               <BarChart2 className="w-8 h-8" />
             </div>
             <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-slate-800 mb-1">
@@ -71,17 +71,17 @@ export default function SelfPacedComplete({ session, participant, finishData, on
           </div>
 
           {/* Your Position Badge */}
-          <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-[#ECE9FE] to-[#E0F8F2] border-2 border-[#6C5CE7]/20 flex items-center justify-between">
+          <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-[#E6F5F4] to-[#E0F8F5] border-2 border-[#00A596]/20 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#6C5CE7] text-white flex items-center justify-center font-display font-extrabold text-lg">
+              <div className="w-10 h-10 rounded-xl bg-[#024948] text-white flex items-center justify-center font-display font-extrabold text-lg">
                 #{finalRank}
               </div>
               <div>
                 <div className="font-display font-bold text-slate-800">{myUsername}</div>
-                <div className="text-xs text-[#6C5CE7] font-bold">Your Position</div>
+                <div className="text-xs text-[#024948] font-bold">Your Position</div>
               </div>
             </div>
-            <div className="font-display text-2xl font-extrabold text-[#6C5CE7]">
+            <div className="font-display text-2xl font-extrabold text-[#024948]">
               {finalScore.toLocaleString()} pts
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function SelfPacedComplete({ session, participant, finishData, on
                   key={p.id || idx}
                   className={`flex items-center justify-between p-3 rounded-2xl border text-sm font-bold transition-all ${
                     isCurrent
-                      ? 'bg-[#ECE9FE] border-[#6C5CE7] ring-2 ring-[#6C5CE7]/30 shadow-sm'
+                      ? 'bg-[#E6F5F4] border-[#024948] ring-2 ring-[#024948]/30 shadow-sm'
                       : 'bg-slate-50 border-slate-100'
                   }`}
                 >
@@ -109,12 +109,12 @@ export default function SelfPacedComplete({ session, participant, finishData, on
                     </span>
                     <span>{p.username}</span>
                     {isCurrent && (
-                      <span className="text-[10px] uppercase font-bold text-white bg-[#6C5CE7] px-1.5 py-0.5 rounded">
+                      <span className="text-[10px] uppercase font-bold text-white bg-[#024948] px-1.5 py-0.5 rounded">
                         You
                       </span>
                     )}
                   </div>
-                  <div className="font-display font-extrabold text-[#6C5CE7]">
+                  <div className="font-display font-extrabold text-[#024948]">
                     {p.score?.toLocaleString()} pts
                   </div>
                 </div>
@@ -132,7 +132,7 @@ export default function SelfPacedComplete({ session, participant, finishData, on
           {leaderboard.groups?.length > 0 && (
             <div className="mb-8 pt-6 border-t border-slate-100">
               <h3 className="font-display text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                <Award className="w-5 h-5 text-[#00B894]" />
+                <Award className="w-5 h-5 text-[#00A596]" />
                 Team Standings
               </h3>
               <div className="grid grid-cols-2 gap-2">
@@ -143,10 +143,10 @@ export default function SelfPacedComplete({ session, participant, finishData, on
                   >
                     <div
                       className="w-4 h-4 rounded-full mx-auto mb-1"
-                      style={{ backgroundColor: g.color || '#6C5CE7' }}
+                      style={{ backgroundColor: g.color || '#024948' }}
                     />
                     <div className="font-display font-bold text-sm text-slate-800">{g.name}</div>
-                    <div className="font-display font-extrabold text-lg text-[#6C5CE7]">
+                    <div className="font-display font-extrabold text-lg text-[#024948]">
                       {g.score?.toLocaleString()} pts
                     </div>
                   </div>
@@ -161,7 +161,7 @@ export default function SelfPacedComplete({ session, participant, finishData, on
               onClick={onToggleLeaderboard}
               className="btn-3d-white w-full py-3 rounded-2xl font-display text-sm font-bold flex items-center justify-center gap-2"
             >
-              <Trophy className="w-4 h-4 text-[#FDCB6E]" />
+              <Trophy className="w-4 h-4 text-[#E9A708]" />
               <span>Back to Score Summary</span>
             </button>
 
@@ -199,10 +199,10 @@ export default function SelfPacedComplete({ session, participant, finishData, on
         </p>
 
         {/* Big Rank & Score Display */}
-        <div className="grid grid-cols-2 gap-4 max-w-md mx-auto p-5 bg-[#ECE9FE]/50 rounded-3xl border-2 border-[#DCD6FA] mb-8">
+        <div className="grid grid-cols-2 gap-4 max-w-md mx-auto p-5 bg-[#E6F5F4]/60 rounded-3xl border-2 border-[#D0EBE8] mb-8">
           <div>
             <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Your Rank</div>
-            <div className="font-display text-4xl sm:text-5xl font-extrabold text-[#6C5CE7] flex items-center justify-center gap-1">
+            <div className="font-display text-4xl sm:text-5xl font-extrabold text-[#024948] flex items-center justify-center gap-1">
               <span>#{finalRank}</span>
             </div>
           </div>
@@ -216,9 +216,9 @@ export default function SelfPacedComplete({ session, participant, finishData, on
 
         {/* Stats Row: Correct, Incorrect, Accuracy */}
         <div className="grid grid-cols-3 gap-2 sm:gap-4 max-w-md mx-auto mb-8 text-center">
-          <div className="p-3 bg-[#E0F8F2] rounded-2xl border border-[#00B894]/20">
-            <CheckCircle className="w-5 h-5 text-[#00B894] mx-auto mb-1" />
-            <div className="font-display text-2xl font-bold text-[#00B894]">{correctCount}</div>
+          <div className="p-3 bg-[#E0F8F5] rounded-2xl border border-[#00A596]/20">
+            <CheckCircle className="w-5 h-5 text-[#00A596] mx-auto mb-1" />
+            <div className="font-display text-2xl font-bold text-[#00A596]">{correctCount}</div>
             <div className="text-[11px] font-bold text-slate-500 uppercase">Correct</div>
           </div>
 
@@ -230,9 +230,9 @@ export default function SelfPacedComplete({ session, participant, finishData, on
             <div className="text-[11px] font-bold text-slate-500 uppercase">Incorrect</div>
           </div>
 
-          <div className="p-3 bg-[#FFF8E6] rounded-2xl border border-[#FDCB6E]/30">
-            <Sparkles className="w-5 h-5 text-[#E5AA3A] mx-auto mb-1" />
-            <div className="font-display text-2xl font-bold text-[#E5AA3A]">{accuracy}%</div>
+          <div className="p-3 bg-[#FFF8E6] rounded-2xl border border-[#E9A708]/30">
+            <Sparkles className="w-5 h-5 text-[#E9A708] mx-auto mb-1" />
+            <div className="font-display text-2xl font-bold text-[#E9A708]">{accuracy}%</div>
             <div className="text-[11px] font-bold text-slate-500 uppercase">Accuracy</div>
           </div>
         </div>

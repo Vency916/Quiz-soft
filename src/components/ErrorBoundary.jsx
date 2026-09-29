@@ -12,7 +12,7 @@ export default class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('QuizPulse ErrorBoundary caught an unhandled error:', error, errorInfo);
+    console.error('SoftLearn ErrorBoundary caught an unhandled error:', error, errorInfo);
     this.setState({ errorInfo });
   }
 
@@ -37,7 +37,7 @@ export default class ErrorBoundary extends React.Component {
               Something went wrong!
             </h1>
             <p className="text-slate-500 text-sm mb-6">
-              QuizPulse encountered an unexpected issue while rendering this page. You can reload or return to the main lobby.
+              SoftLearn encountered an unexpected issue while rendering this page. You can reload or return to the main lobby.
             </p>
 
             {this.state.error && (

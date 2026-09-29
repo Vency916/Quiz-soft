@@ -31,7 +31,7 @@ export default function QRCodeModal({ sessionCode, isOpen, onClose }) {
           <X className="w-5 h-5" />
         </button>
 
-        <div className="w-12 h-12 rounded-2xl bg-[#ECE9FE] flex items-center justify-center text-[#6C5CE7] mb-3">
+        <div className="w-12 h-12 rounded-2xl bg-[#E6F5F4] flex items-center justify-center text-[#024948] mb-3">
           <QrCode className="w-6 h-6" />
         </div>
 
@@ -39,7 +39,7 @@ export default function QRCodeModal({ sessionCode, isOpen, onClose }) {
         <p className="text-sm text-slate-500 mb-6">Point your phone camera to join the quiz instantly!</p>
 
         {/* QR Code Container */}
-        <div className="p-4 bg-white rounded-2xl border-4 border-[#6C5CE7]/20 shadow-inner mb-6">
+        <div className="p-4 bg-white rounded-2xl border-4 border-[#024948]/20 shadow-inner mb-6">
           <QRCodeSVG
             value={joinUrl}
             size={200}
@@ -52,7 +52,7 @@ export default function QRCodeModal({ sessionCode, isOpen, onClose }) {
         <div className="w-full bg-slate-50 rounded-2xl p-3 border border-slate-200 mb-4 flex items-center justify-between">
           <div className="text-left">
             <div className="text-xs uppercase font-bold text-slate-400">Game PIN</div>
-            <div className="font-display text-2xl font-bold tracking-widest text-[#6C5CE7]">{sessionCode}</div>
+            <div className="font-display text-2xl font-bold tracking-widest text-[#024948]">{sessionCode}</div>
           </div>
           <button
             onClick={handleCopy}

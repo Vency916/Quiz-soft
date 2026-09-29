@@ -288,14 +288,14 @@ export default function QuizEditor() {
                 sounds.playClick();
                 setShowImportModal(true);
               }}
-              className="text-slate-600 hover:text-[#6C5CE7] hover:bg-[#ECE9FE] px-2 py-1 rounded-lg flex items-center gap-1 transition-colors text-xs font-bold cursor-pointer"
+              className="text-slate-600 hover:text-[#024948] hover:bg-[#E6F5F4] px-2 py-1 rounded-lg flex items-center gap-1 transition-colors text-xs font-bold cursor-pointer"
             >
               <FileUp className="w-3.5 h-3.5" />
               <span>Import</span>
             </button>
             <button
               onClick={handleAddQuestion}
-              className="text-[#6C5CE7] hover:bg-[#ECE9FE] px-2 py-1 rounded-lg flex items-center gap-1 transition-colors text-xs font-bold cursor-pointer"
+              className="text-[#024948] hover:bg-[#E6F5F4] px-2 py-1 rounded-lg flex items-center gap-1 transition-colors text-xs font-bold cursor-pointer"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>Add</span>
@@ -314,7 +314,7 @@ export default function QuizEditor() {
                 }}
                 className={`shrink-0 px-3.5 py-2 rounded-xl font-display font-bold text-xs flex items-center gap-1.5 transition-all ${
                   isSelected
-                    ? 'bg-[#6C5CE7] text-white shadow-sm scale-105'
+                    ? 'bg-[#024948] text-white shadow-sm scale-105'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
@@ -339,7 +339,7 @@ export default function QuizEditor() {
                   sounds.playClick();
                   setShowImportModal(true);
                 }}
-                className="text-xs font-bold text-slate-600 hover:text-[#6C5CE7] hover:bg-[#ECE9FE] px-2 py-1 rounded-lg flex items-center gap-1 transition-colors cursor-pointer"
+                className="text-xs font-bold text-slate-600 hover:text-[#024948] hover:bg-[#E6F5F4] px-2 py-1 rounded-lg flex items-center gap-1 transition-colors cursor-pointer"
                 title="Import questions from PDF or DOCX"
               >
                 <FileUp className="w-3.5 h-3.5" />
@@ -347,7 +347,7 @@ export default function QuizEditor() {
               </button>
               <button
                 onClick={handleAddQuestion}
-                className="text-xs font-bold text-[#6C5CE7] hover:bg-[#ECE9FE] px-2 py-1 rounded-lg flex items-center gap-1 transition-colors cursor-pointer"
+                className="text-xs font-bold text-[#024948] hover:bg-[#E6F5F4] px-2 py-1 rounded-lg flex items-center gap-1 transition-colors cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add</span>
@@ -367,7 +367,7 @@ export default function QuizEditor() {
                   }}
                   className={`p-3.5 rounded-2xl border-2 transition-all cursor-pointer flex items-center justify-between group ${
                     isSelected
-                      ? 'border-[#6C5CE7] bg-[#ECE9FE] shadow-sm'
+                      ? 'border-[#024948] bg-[#E6F5F4] shadow-sm'
                       : 'border-slate-100 bg-white hover:border-slate-200'
                   }`}
                 >

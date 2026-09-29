@@ -154,13 +154,13 @@ export default function ActiveQuestion({
       {/* ═════════════════════════════════════════════════════════════════════
           2. FLOATING QUESTION CARD (Matching Image 2)
           ═════════════════════════════════════════════════════════════════════ */}
-      <div className="card-playful p-6 sm:p-8 bg-white border-2 border-[#ECE8FD] shadow-xl shadow-[#6C5CE7]/6 mb-6">
+      <div className="card-playful p-6 sm:p-8 bg-white border-2 border-[#D0EBE8] shadow-xl shadow-[#024948]/6 mb-6">
         {/* Category Header */}
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs font-black uppercase tracking-wider text-slate-400">
             {session?.quiz?.category || 'General Knowledge'}
           </span>
-          <span className="text-xs font-black px-2.5 py-0.5 rounded-lg bg-[#ECE9FE] text-[#6C5CE7]">
+          <span className="text-xs font-black px-2.5 py-0.5 rounded-lg bg-[#E6F5F4] text-[#024948]">
             {currentQ.points} PTS {session?.settings?.speed_bonus && '⚡'}
           </span>
         </div>
@@ -197,13 +197,13 @@ export default function ActiveQuestion({
                   disabled={submitting}
                   className={`w-full p-4 sm:p-5 rounded-2xl font-display font-bold text-base sm:text-lg flex items-center justify-between text-left transition-all cursor-pointer ${
                     isSelected
-                      ? 'option-card-selected ring-4 ring-[#6C5CE7]/20'
+                      ? 'option-card-selected ring-4 ring-[#024948]/20'
                       : 'option-card-idle'
                   }`}
                 >
                   <span className="leading-snug">{opt.option_text}</span>
                   {isSelected && (
-                    <span className="w-6 h-6 rounded-full bg-[#6C5CE7] text-white flex items-center justify-center shrink-0">
+                    <span className="w-6 h-6 rounded-full bg-[#024948] text-white flex items-center justify-center shrink-0">
                       <Check className="w-4 h-4 stroke-[3]" />
                     </span>
                   )}
@@ -226,9 +226,9 @@ export default function ActiveQuestion({
                   disabled={submitting}
                   className={`py-6 px-4 rounded-2xl font-display font-bold text-xl sm:text-2xl flex items-center justify-center transition-all cursor-pointer shadow-sm ${
                     isSelected
-                      ? 'option-card-selected ring-4 ring-[#6C5CE7]/20'
+                      ? 'option-card-selected ring-4 ring-[#024948]/20'
                       : isTrue
-                      ? 'bg-white border-2 border-slate-200 hover:border-[#00B894] hover:bg-[#E8F8F2] text-slate-800'
+                      ? 'bg-white border-2 border-slate-200 hover:border-[#00A596] hover:bg-[#E0F8F5] text-slate-800'
                       : 'bg-white border-2 border-slate-200 hover:border-[#FF7675] hover:bg-[#FFEAEA] text-slate-800'
                   }`}
                 >
@@ -253,14 +253,14 @@ export default function ActiveQuestion({
                     disabled={submitting}
                     className={`w-full p-4 rounded-2xl border-2 text-left flex items-center justify-between font-display font-bold text-base transition-all cursor-pointer ${
                       isChecked
-                        ? 'border-[#6C5CE7] bg-[#F1EEFF] text-[#6C5CE7]'
+                        ? 'border-[#024948] bg-[#E6F5F4] text-[#024948]'
                         : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'
                     }`}
                   >
                     <span>{opt.option_text}</span>
                     <div
                       className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center shrink-0 ${
-                        isChecked ? 'bg-[#6C5CE7] border-[#6C5CE7] text-white' : 'border-slate-300'
+                        isChecked ? 'bg-[#024948] border-[#024948] text-white' : 'border-slate-300'
                       }`}
                     >
                       {isChecked && <CheckSquare className="w-4 h-4" />}
@@ -273,7 +273,7 @@ export default function ActiveQuestion({
             <button
               type="submit"
               disabled={submitting || selectedMulti.length === 0}
-              className="btn-3d-green w-full py-4 rounded-2xl font-display text-lg font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md mt-4"
+              className="btn-3d-secondary w-full py-4 rounded-2xl font-display text-lg font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md mt-4"
             >
               <span>Submit Selection</span>
             </button>
@@ -291,13 +291,13 @@ export default function ActiveQuestion({
               disabled={submitting}
               required
               autoFocus
-              className="w-full bg-white border-2 border-slate-200 focus:border-[#6C5CE7] rounded-2xl px-5 py-4 font-display text-xl font-bold text-center text-slate-800 focus:outline-none shadow-sm transition-all"
+              className="w-full bg-white border-2 border-slate-200 focus:border-[#00A596] rounded-2xl px-5 py-4 font-display text-xl font-bold text-center text-slate-800 focus:outline-none shadow-sm transition-all"
             />
 
             <button
               type="submit"
               disabled={submitting || !shortAnswerText.trim()}
-              className="btn-3d-green w-full py-4 rounded-2xl font-display text-lg font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md"
+              className="btn-3d-secondary w-full py-4 rounded-2xl font-display text-lg font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md"
             >
               <Send className="w-5 h-5" />
               <span>Submit Answer</span>
@@ -308,8 +308,8 @@ export default function ActiveQuestion({
 
       {/* Submitting Feedback Indicator */}
       {submitting && !selfPacedMode && (
-        <div className="p-3 rounded-2xl bg-white border border-[#ECE8FD] text-center text-slate-500 font-bold text-xs flex items-center justify-center gap-2 shadow-sm animate-pulse">
-          <span className="w-2 h-2 rounded-full bg-[#00B894] animate-ping" />
+        <div className="p-3 rounded-2xl bg-white border border-[#D0EBE8] text-center text-slate-500 font-bold text-xs flex items-center justify-center gap-2 shadow-sm animate-pulse">
+          <span className="w-2 h-2 rounded-full bg-[#00A596] animate-ping" />
           <span>Answer recorded! Waiting for time or host to reveal answers...</span>
         </div>
       )}

@@ -26,14 +26,13 @@ export default function Navbar() {
         <Link 
           to="/" 
           onClick={() => sounds.playClick()}
-          className="flex items-center gap-2.5 group"
+          className="flex items-center gap-2 group py-1"
         >
-          <Mascot mood="happy" size={38} className="group-hover:scale-110 transition-transform" />
-          <div className="flex flex-col">
-            <span className="font-display text-xl font-black tracking-tight text-[#252A34] flex items-center gap-1">
-              Quiz<span className="text-[#6C5CE7]">Pulse</span>
-            </span>
-          </div>
+          <img 
+            src="/softlearn-logo.png" 
+            alt="SoftLearn" 
+            className="h-9 sm:h-10 w-auto object-contain group-hover:scale-105 transition-transform" 
+          />
         </Link>
 
         {/* Center / Navigation Links */}
@@ -42,15 +41,15 @@ export default function Navbar() {
             <a 
               href="#live-quizzes" 
               onClick={() => sounds.playClick()}
-              className="text-sm font-semibold text-slate-600 hover:text-[#6C5CE7] flex items-center gap-1.5 transition-colors"
+              className="text-sm font-bold text-slate-600 hover:text-[#024948] flex items-center gap-1.5 transition-colors"
             >
-              <Radio className="w-4 h-4 text-[#00B894] animate-pulse" />
+              <Radio className="w-4 h-4 text-[#00A596] animate-pulse" />
               Live Quizzes
             </a>
             <Link 
               to="/join" 
               onClick={() => sounds.playClick()}
-              className="text-sm font-semibold text-slate-600 hover:text-[#6C5CE7] transition-colors"
+              className="text-sm font-bold text-slate-600 hover:text-[#024948] transition-colors"
             >
               Enter Code
             </Link>
@@ -66,16 +65,16 @@ export default function Navbar() {
             className="w-9 h-9 rounded-xl border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-800 hover:bg-slate-50 transition-colors"
             title={muted ? 'Unmute Sound FX' : 'Mute Sound FX'}
           >
-            {muted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-[#6C5CE7]" />}
+            {muted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-[#00A596]" />}
           </button>
 
           {/* Join CTA */}
           <Link
             to="/join"
             onClick={() => sounds.playClick()}
-            className="btn-3d-secondary px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-1.5 shadow-sm"
+            className="btn-3d-accent px-4 py-2 rounded-xl text-sm font-extrabold flex items-center gap-1.5 shadow-sm"
           >
-            <Play className="w-4 h-4 fill-white" />
+            <Play className="w-4 h-4 fill-[#1F1905]" />
             <span className="hidden xs:inline">Join</span> Quiz
           </Link>
 
@@ -85,7 +84,7 @@ export default function Navbar() {
               to="/admin"
               onClick={() => sounds.playClick()}
               aria-label="Admin Portal"
-              className="p-2 rounded-xl text-[#6C5CE7] bg-[#ECE9FE]/40 hover:bg-[#ECE9FE] transition-colors"
+              className="p-2 rounded-xl text-[#024948] bg-[#E0F8F5] hover:bg-[#C9F2EC] transition-colors"
               title="Super Admin Portal"
             >
               <Shield className="w-5 h-5" />

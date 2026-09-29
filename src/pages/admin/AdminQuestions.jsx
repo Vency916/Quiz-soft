@@ -119,15 +119,15 @@ export default function AdminQuestions() {
           {questions.map((q, idx) => (
             <div
               key={q.id}
-              className="card-playful p-4 sm:p-6 bg-white border-2 border-slate-100 shadow-sm hover:border-[#DCD6FA] transition-all"
+              className="card-playful p-4 sm:p-6 bg-white border-2 border-slate-100 shadow-sm hover:border-[#8FD8D1] transition-all"
             >
               {/* Top Row: Quiz Category, Type, Order, Time, Points */}
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-lg bg-[#ECE9FE] text-[#6C5CE7] flex items-center justify-center font-display font-bold text-xs">
+                  <span className="w-6 h-6 rounded-lg bg-[#E6F5F4] text-[#024948] flex items-center justify-center font-display font-bold text-xs">
                     {q.order}
                   </span>
-                  <span className="text-xs font-bold text-[#6C5CE7] bg-[#ECE9FE]/60 px-2.5 py-0.5 rounded-full">
+                  <span className="text-xs font-bold text-[#024948] bg-[#E6F5F4]/60 px-2.5 py-0.5 rounded-full">
                     {q.quiz?.title || 'Quiz'}
                   </span>
                   <span className="text-[11px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full uppercase">
@@ -140,7 +140,7 @@ export default function AdminQuestions() {
                     <Clock className="w-3.5 h-3.5 text-slate-400" />
                     {q.time_limit}s
                   </span>
-                  <span className="flex items-center gap-1 text-[#00B894]">
+                  <span className="flex items-center gap-1 text-[#00A596]">
                     <Award className="w-3.5 h-3.5" />
                     {q.points} pts
                   </span>
@@ -150,7 +150,7 @@ export default function AdminQuestions() {
                       sounds.playClick();
                       setPreviewQuestion(q);
                     }}
-                    className="p-1.5 rounded-lg text-slate-400 hover:text-[#6C5CE7] hover:bg-[#ECE9FE] transition-colors"
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-[#024948] hover:bg-[#E6F5F4] transition-colors"
                     title="Simulate Participant View"
                   >
                     <Eye className="w-4 h-4" />
@@ -225,7 +225,7 @@ export default function AdminQuestions() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3.5 sm:p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in overflow-y-auto">
           <div className="bg-white rounded-3xl p-5 sm:p-8 max-w-lg w-full border-2 border-slate-100 shadow-2xl relative my-auto max-h-[92vh] overflow-y-auto">
             <div className="text-center mb-6">
-              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#6C5CE7] bg-[#ECE9FE] px-3 py-1 rounded-full">
+              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#024948] bg-[#E6F5F4] px-3 py-1 rounded-full">
                 Player View Simulation
               </span>
               <h3 className="font-display text-xl sm:text-2xl font-bold text-slate-800 mt-3">
@@ -239,7 +239,7 @@ export default function AdminQuestions() {
                   key={opt.id || i}
                   className={`p-4 rounded-2xl border-2 font-display font-bold text-center text-sm shadow-sm ${
                     opt.is_correct
-                      ? 'border-[#00B894] bg-[#E0F8F2] text-[#008D72]'
+                      ? 'border-[#00A596] bg-[#E0F8F5] text-[#008175]'
                       : 'border-slate-200 bg-slate-50 text-slate-700'
                   }`}
                 >
