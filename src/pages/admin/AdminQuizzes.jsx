@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Search, Filter, Play, Edit3, Copy, Trash2, HelpCircle, Layers, CheckCircle2 } from 'lucide-react';
+import { Plus, Search, Filter, Play, Edit3, Copy, Trash2, HelpCircle, Layers, CheckCircle2, FileUp } from 'lucide-react';
 import api from '../../services/api';
 import { sounds } from '../../services/soundEffects';
+import QuestionImportModal from '../../components/admin/QuestionImportModal';
 
 export default function AdminQuizzes() {
   const [quizzes, setQuizzes] = useState([]);
@@ -11,6 +12,7 @@ export default function AdminQuizzes() {
   const [statusFilter, setStatusFilter] = useState('all');
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showLaunchModal, setShowLaunchModal] = useState(false);
+  const [showImportModal, setShowImportModal] = useState(false);
   const [selectedQuizToLaunch, setSelectedQuizToLaunch] = useState(null);
 
   // New Quiz Form State
@@ -126,16 +128,29 @@ export default function AdminQuizzes() {
           </p>
         </div>
 
-        <button
-          onClick={() => {
-            sounds.playClick();
-            setShowCreateModal(true);
-          }}
-          className="btn-3d-primary w-full sm:w-auto justify-center px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2 shadow-sm cursor-pointer"
-        >
-          <Plus className="w-4 h-4" />
-          <span>New Quiz</span>
-        </button>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto">
+          <button
+            onClick={() => {
+              sounds.playClick();
+              setShowImportModal(true);
+            }}
+            className="btn-3d-secondary justify-center px-4 py-3 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2 shadow-sm cursor-pointer"
+          >
+            <FileUp className="w-4 h-4" />
+            <span>Import PDF / DOCX</span>
+          </button>
+
+          <button
+            onClick={() => {
+              sounds.playClick();
+              setShowCreateModal(true);
+            }}
+            className="btn-3d-primary justify-center px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2 shadow-sm cursor-pointer"
+          >
+            <Plus className="w-4 h-4" />
+            <span>New Quiz</span>
+          </button>
+        </div>
       </div>
 
       {/* Search & Filter Bar */}
@@ -483,6 +498,13 @@ export default function AdminQuizzes() {
           </div>
         </div>
       )}
+
+      {/* Document Import Modal */}
+      <QuestionImportModal
+        isOpen={showImportModal}
+        onClose={() => setShowImportModal(false)}
+        onSuccess={() => fetchQuizzes()}
+      />
     </div>
   );
 }
