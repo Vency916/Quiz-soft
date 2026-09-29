@@ -118,10 +118,10 @@ export default function AdminQuizzes() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="font-display text-3xl font-extrabold text-slate-800">
+          <h1 className="font-display text-2xl sm:text-3xl font-extrabold text-slate-800">
             Quiz Management
           </h1>
-          <p className="text-slate-500 text-sm mt-1">
+          <p className="text-slate-500 text-xs sm:text-sm mt-1">
             Create, edit, duplicate, and launch interactive quizzes
           </p>
         </div>
@@ -131,7 +131,7 @@ export default function AdminQuizzes() {
             sounds.playClick();
             setShowCreateModal(true);
           }}
-          className="btn-3d-primary px-5 py-3 rounded-2xl text-sm font-bold flex items-center gap-2 shadow-sm cursor-pointer"
+          className="btn-3d-primary w-full sm:w-auto justify-center px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2 shadow-sm cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>New Quiz</span>
@@ -147,11 +147,11 @@ export default function AdminQuizzes() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by title, description or category..."
-            className="w-full bg-white border-2 border-slate-200 focus:border-[#6C5CE7] rounded-2xl pl-11 pr-4 py-2.5 text-sm font-semibold focus:outline-none transition-all shadow-sm"
+            className="w-full bg-white border-2 border-slate-200 focus:border-[#6C5CE7] rounded-2xl pl-11 pr-4 py-2.5 text-xs sm:text-sm font-semibold focus:outline-none transition-all shadow-sm"
           />
         </div>
 
-        <div className="flex items-center gap-1.5 p-1 bg-white border border-slate-200 rounded-2xl shadow-sm">
+        <div className="flex items-center gap-1.5 p-1 bg-white border border-slate-200 rounded-2xl shadow-sm overflow-x-auto">
           {['all', 'published', 'draft'].map((status) => (
             <button
               key={status}
@@ -159,7 +159,7 @@ export default function AdminQuizzes() {
                 sounds.playClick();
                 setStatusFilter(status);
               }}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold uppercase transition-all ${
+              className={`flex-1 sm:flex-none px-3 py-1.5 rounded-xl text-xs font-bold uppercase transition-all whitespace-nowrap text-center ${
                 statusFilter === status
                   ? 'bg-[#6C5CE7] text-white shadow-sm'
                   : 'text-slate-500 hover:text-slate-800'
@@ -183,7 +183,7 @@ export default function AdminQuizzes() {
           {quizzes.map((quiz) => (
             <div
               key={quiz.id}
-              className="card-playful p-6 bg-white border-2 border-slate-100 shadow-md flex flex-col justify-between"
+              className="card-playful p-4 sm:p-6 bg-white border-2 border-slate-100 shadow-md flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
@@ -291,9 +291,9 @@ export default function AdminQuizzes() {
 
       {/* Create Quiz Modal */}
       {showCreateModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full border-2 border-slate-100 shadow-2xl">
-            <h3 className="font-display text-2xl font-bold text-slate-800 mb-4">Create New Quiz</h3>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3.5 sm:p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in overflow-y-auto">
+          <div className="bg-white rounded-3xl p-5 sm:p-8 max-w-md w-full border-2 border-slate-100 shadow-2xl my-auto max-h-[92vh] overflow-y-auto">
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-slate-800 mb-4">Create New Quiz</h3>
 
             <form onSubmit={handleCreateQuiz} className="space-y-4">
               <div>
@@ -367,9 +367,9 @@ export default function AdminQuizzes() {
 
       {/* Launch Session Modal */}
       {showLaunchModal && selectedQuizToLaunch && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full border-2 border-slate-100 shadow-2xl">
-            <h3 className="font-display text-2xl font-bold text-slate-800 mb-1">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3.5 sm:p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in overflow-y-auto">
+          <div className="bg-white rounded-3xl p-5 sm:p-8 max-w-md w-full border-2 border-slate-100 shadow-2xl my-auto max-h-[92vh] overflow-y-auto">
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-slate-800 mb-1">
               Launch Live Session
             </h3>
             <p className="text-xs text-slate-500 mb-6">
