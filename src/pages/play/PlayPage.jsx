@@ -132,7 +132,7 @@ export default function PlayPage() {
           total_questions: allQuestions.length,
           correct_count: 0,
           accuracy: 0,
-          final_rank: 1,
+          final_rank: null,
         });
       }
     } else {

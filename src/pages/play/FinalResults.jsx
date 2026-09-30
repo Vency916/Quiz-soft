@@ -39,7 +39,7 @@ export default function FinalResults({ session, participant, onLeave }) {
   const incorrectCount = currentParticipant?.incorrect_answers ?? myResult?.incorrect_answers ?? Math.max(0, totalQuestions - correctCount);
   const accuracy = totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0;
   const finalScore = currentParticipant?.score ?? myResult?.score ?? 0;
-  const finalRank = myResult?.rank || 1;
+  const finalRank = myResult?.rank ?? null;
 
   return (
     <div className="max-w-2xl mx-auto w-full px-4 py-8 animate-fade-in">
@@ -61,7 +61,7 @@ export default function FinalResults({ session, participant, onLeave }) {
           <div>
             <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Final Position</div>
             <div className="font-display text-4xl sm:text-5xl font-extrabold text-[#024948] flex items-center justify-center gap-1">
-              <span>#{finalRank}</span>
+              <span>{finalRank !== null ? `#${finalRank}` : '—'}</span>
             </div>
           </div>
           <div>
@@ -107,7 +107,7 @@ export default function FinalResults({ session, participant, onLeave }) {
               const isCurrent = p.username === currentParticipant?.username;
               return (
                 <div
-                  key={p.id}
+                  key={p.id || p.username}
                   className={`flex items-center justify-between p-3 rounded-2xl border text-sm font-bold ${
                     isCurrent ? 'bg-[#E6F5F4] border-[#024948]' : 'bg-slate-50 border-slate-100'
                   }`}

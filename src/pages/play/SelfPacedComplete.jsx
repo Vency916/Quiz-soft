@@ -49,7 +49,7 @@ export default function SelfPacedComplete({ session, participant, finishData, on
   const incorrectCount = finishData.incorrect_count || Math.max(0, totalQ - correctCount);
   const accuracy = finishData.accuracy || (totalQ > 0 ? Math.round((correctCount / totalQ) * 100) : 0);
   const finalScore = finishData.final_score || participant?.score || 0;
-  const finalRank = finishData.final_rank || 1;
+  const finalRank = finishData.final_rank ?? null;
 
   // Leaderboard View
   if (showLeaderboard) {
@@ -74,7 +74,7 @@ export default function SelfPacedComplete({ session, participant, finishData, on
           <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-[#E6F5F4] to-[#E0F8F5] border-2 border-[#00A596]/20 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#024948] text-white flex items-center justify-center font-display font-extrabold text-lg">
-                #{finalRank}
+                #{finalRank !== null ? finalRank : '—'}
               </div>
               <div>
                 <div className="font-display font-bold text-slate-800">{myUsername}</div>
@@ -203,7 +203,7 @@ export default function SelfPacedComplete({ session, participant, finishData, on
           <div>
             <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Your Rank</div>
             <div className="font-display text-4xl sm:text-5xl font-extrabold text-[#024948] flex items-center justify-center gap-1">
-              <span>#{finalRank}</span>
+              <span>{finalRank !== null ? `#${finalRank}` : '—'}</span>
             </div>
           </div>
           <div>
