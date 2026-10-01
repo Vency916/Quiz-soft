@@ -18,6 +18,7 @@ import {
   Layers,
   ChevronDown,
   ChevronUp,
+  Shuffle,
 } from 'lucide-react';
 import api from '../../services/api';
 import { sounds } from '../../services/soundEffects';
@@ -220,6 +221,37 @@ export default function QuestionImportModal({
   const handleDeleteQuestion = (qIdx) => {
     sounds.playClick();
     const updated = parsedQuestions.filter((_, i) => i !== qIdx);
+    setParsedQuestions(updated);
+  };
+
+  // Shuffle all questions order
+  const handleShuffleQuestions = () => {
+    if (parsedQuestions.length <= 1) return;
+    sounds.playClick();
+    const updated = [...parsedQuestions];
+    for (let i = updated.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [updated[i], updated[j]] = [updated[j], updated[i]];
+    }
+    setParsedQuestions(updated);
+  };
+
+  // Shuffle options for a specific question
+  const handleShuffleQuestionOptions = (qIdx) => {
+    sounds.playClick();
+    const updated = [...parsedQuestions];
+    const opts = [...(updated[qIdx].options || [])];
+    for (let i = opts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [opts[i], opts[j]] = [opts[j], opts[i]];
+    }
+    opts.forEach((opt, idx) => {
+      opt.order = idx + 1;
+    });
+    updated[qIdx] = {
+      ...updated[qIdx],
+      options: opts,
+    };
     setParsedQuestions(updated);
   };
 
@@ -581,10 +613,23 @@ Ans: B`}
             </div>
 
             {/* Questions Header */}
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                Questions to Import ({parsedQuestions.length})
-              </span>
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                  Questions to Import ({parsedQuestions.length})
+                </span>
+                {parsedQuestions.length > 1 && (
+                  <button
+                    type="button"
+                    onClick={handleShuffleQuestions}
+                    className="px-2.5 py-1 rounded-xl text-xs font-bold bg-[#E6F5F4] text-[#024948] hover:bg-[#024948] hover:text-white transition-all flex items-center gap-1.5 shadow-sm active:scale-95 cursor-pointer"
+                    title="Randomize questions order"
+                  >
+                    <Shuffle className="w-3.5 h-3.5" />
+                    <span>Shuffle</span>
+                  </button>
+                )}
+              </div>
               <span className="text-[11px] text-slate-400 font-medium">
                 Tap radio buttons to change the correct answer
               </span>
@@ -648,8 +693,17 @@ Ans: B`}
 
                       <button
                         type="button"
+                        onClick={() => handleShuffleQuestionOptions(qIdx)}
+                        className="p-1 text-slate-400 hover:text-[#024948] hover:bg-[#E6F5F4] rounded-lg transition-colors ml-1"
+                        title="Shuffle this question's answer options"
+                      >
+                        <Shuffle className="w-3.5 h-3.5" />
+                      </button>
+
+                      <button
+                        type="button"
                         onClick={() => handleDeleteQuestion(qIdx)}
-                        className="p-1 text-slate-300 hover:text-[#FF7675] transition-colors ml-1"
+                        className="p-1 text-slate-300 hover:text-[#FF7675] hover:bg-[#FFEBEB] rounded-lg transition-colors ml-0.5"
                         title="Remove Question"
                       >
                         <Trash2 className="w-4 h-4" />

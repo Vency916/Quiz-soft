@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Save, Plus, Trash2, Copy, MoveUp, MoveDown, Check, CheckSquare, Sparkles, HelpCircle, Eye, Play, FileUp } from 'lucide-react';
+import { ArrowLeft, Save, Plus, Trash2, Copy, MoveUp, MoveDown, Check, CheckSquare, Sparkles, HelpCircle, Eye, Play, FileUp, Shuffle } from 'lucide-react';
 import api from '../../services/api';
 import { sounds } from '../../services/soundEffects';
 import QuestionImportModal from '../../components/admin/QuestionImportModal';
@@ -95,6 +95,22 @@ export default function QuizEditor() {
     updated[idx + direction] = temp;
     setQuestions(updated);
     setSelectedQuestionIndex(idx + direction);
+  };
+
+  // Shuffle all questions order
+  const handleShuffleQuestions = () => {
+    if (questions.length <= 1) return;
+    sounds.playClick();
+    const updated = [...questions];
+    for (let i = updated.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [updated[i], updated[j]] = [updated[j], updated[i]];
+    }
+    updated.forEach((q, idx) => {
+      q.order = idx + 1;
+    });
+    setQuestions(updated);
+    setSelectedQuestionIndex(0);
   };
 
   // Update current question fields
@@ -283,6 +299,16 @@ export default function QuizEditor() {
         <div className="flex items-center justify-between text-xs font-bold text-slate-500 uppercase tracking-wider">
           <span>Questions ({questions.length})</span>
           <div className="flex items-center gap-1">
+            {questions.length > 1 && (
+              <button
+                onClick={handleShuffleQuestions}
+                className="text-slate-600 hover:text-[#024948] hover:bg-[#E6F5F4] px-2 py-1 rounded-lg flex items-center gap-1 transition-colors text-xs font-bold cursor-pointer"
+                title="Shuffle questions order"
+              >
+                <Shuffle className="w-3.5 h-3.5" />
+                <span>Shuffle</span>
+              </button>
+            )}
             <button
               onClick={() => {
                 sounds.playClick();
@@ -334,6 +360,16 @@ export default function QuizEditor() {
               Questions ({questions.length})
             </span>
             <div className="flex items-center gap-1">
+              {questions.length > 1 && (
+                <button
+                  onClick={handleShuffleQuestions}
+                  className="text-xs font-bold text-slate-600 hover:text-[#024948] hover:bg-[#E6F5F4] px-2 py-1 rounded-lg flex items-center gap-1 transition-colors cursor-pointer"
+                  title="Shuffle questions order"
+                >
+                  <Shuffle className="w-3.5 h-3.5" />
+                  <span>Shuffle</span>
+                </button>
+              )}
               <button
                 onClick={() => {
                   sounds.playClick();
